@@ -171,3 +171,7 @@ handleFieldChange(e, name) {
 //사용법 :
 onChange={e => this.handleFieldChange(e, 'username')}
 ```
+
+### I14
+
+사용자가 링크를 클릭하지 않아도 주소표시줄의 주소를 바꾸고 싶을 때 : redirect 렌더링 => 부작용이 있다. 알아보자
