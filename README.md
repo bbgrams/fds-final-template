@@ -79,6 +79,11 @@ addDecorator(StoryRouter());
 
 # 수업 중
 
+## 주소 설계
+
+/root : 홈
+/product/1 : 1번 상품 정보
+
 ### 1
 
 PC 가 받는 데이터의 구조가 서버가 받는 데이터 구조에 의존성이 있으면 좋지않다.
@@ -91,3 +96,15 @@ PC의 사용법은 최대한 간단하게 유지하는 것이 좋기 때문에 �
 ex) loading
 
 loading이라는 prop을 내려받을 수 있는 컴포넌트에 둘러준다 (PostList에 loading이라는 prop이 있고 ProductListView가 그 prop을 내려받을 수 있으므로 ProductListView에 둘러준다)
+
+### 3
+
+ROUTE는 if같은 칭긔이지 if else 같은 칭긔가 아니다. 중복이 와다다 될 수 있음 => `switch`, `exact` 사용해서 해결 가능
+
+1. exact
+
+   - exact prop이 있을 때 = 주소가 정확히 일치해야만 페이지가 그려짐
+   - exact prop이 없을 때 = 주소가 path로 시작하면 페이지가 그려짐
+
+1. switch
+   - 둘러주고 home 부분을 맨 밑으로 내려주어야한다.
