@@ -150,3 +150,24 @@ this를 고정시킬 수 있다면 어느방식이든 상관 없다.
 다른 컴포넌트에 넘겨야하거나 이벤트를 등록해야 하는 경우에는 화살표 함수를 사용하자!
 
 ### I11
+
+UserProvider로 감싸주면 UserConsumer에서 Provider의 기능을 가져다쓸 수있다.
+
+### I12
+
+제어되는 컴포넌트를 만든다는 것 : 상태를 만드는것, 상태를 바꾸는 함수를 만들어서 input..등에게 내려주는 것
+
+### I13
+
+필드가 많을 때 handleUsernameChange() .. 이런식으로 일일히 함수를 만들어 줄 수 없으니 함수를 하나 만들어서 매개변수로 가능하게한다
+
+```js
+handleFieldChange(e, name) {
+    this.setState({
+      [name]: e.target.value,
+    });
+  }
+
+//사용법 :
+onChange={e => this.handleFieldChange(e, 'username')}
+```
