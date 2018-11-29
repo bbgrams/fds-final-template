@@ -108,3 +108,8 @@ ROUTE는 if같은 칭긔이지 if else 같은 칭긔가 아니다. 중복이 와
 
 1. switch
    - 둘러주고 home 부분을 맨 밑으로 내려주어야한다.
+
+### I4
+
+상품상세페이지에서 react 개발자 도구를 확인해보면 ProductPage 는 match 라는 정보를 받고있는것을 알 수 있다.
+match에는 해당 상품의 productId를 가지고 있으므로 이 내용을 productDetail에 전달해주면 id에 맞는 상품상세페이지를 불러올수있다.
