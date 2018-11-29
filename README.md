@@ -139,3 +139,14 @@ selected 대신에 빈문자열을 넣고 초기상태에 빈문자열을 넣는
 ### I9
 
 input type이 number인 경우에는 최소값과 최대값을 설정해 줄 수 있다.
+
+### I10
+
+this를 고정시킬 수 있다면 어느방식이든 상관 없다.
+
+1. `onCreateCartItem={this.handleCreateCartItem.bind(this)}` 이런식으로 this를 고정해준다.
+1. `handleCreateCartItem` 함수를 화살표 함수로 만들어준다. 화살표함수로 만들어주면 `this`가 고정되어있기때문에 `bind` 를 쓰지않아도 된다.
+
+다른 컴포넌트에 넘겨야하거나 이벤트를 등록해야 하는 경우에는 화살표 함수를 사용하자!
+
+### I11
