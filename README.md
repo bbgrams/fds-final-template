@@ -77,5 +77,10 @@ import StoryRouter from 'storybook-react-router';
 addDecorator(StoryRouter());
 ```
 
-
 # 수업 중
+
+### 1
+
+PC 가 받는 데이터의 구조가 서버가 받는 데이터 구조에 의존성이 있으면 좋지않다.
+PC에서 어떤 데이터를 받을 것인가와 서버의 데이터 구조는 상관이 없다.
+PC의 사용법은 최대한 간단하게 유지하는 것이 좋기 때문에 서버에 의존성을 두지 않는다.
