@@ -20,7 +20,7 @@ export default class ProductList extends Component {
   }
 
   render() {
-    const { products } = this.state;
+    const { products, loading } = this.state;
     // 1
     const productsList = products.map(p => ({
       // 소괄호, 중괄호 => 객체 바로 반환하기
@@ -28,6 +28,6 @@ export default class ProductList extends Component {
       id: p.id,
       imgURL: p.mainImgUrl,
     }));
-    return <ProductListView products={productsList} />;
+    return <ProductListView loading={loading} products={productsList} />;
   }
 }
