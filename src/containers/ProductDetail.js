@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
 import ProductDetailView from '../components/ProductDetailView';
+import api from '../api';
 
 export default class ProductDetail extends Component {
-  render() {
-    const product = {
-      id: 1,
-      title: '민초',
-      description: '마싱ㅅ어요',
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: true,
+      id: null,
+      title: '',
+      description: '',
       mainImgUrl: '',
-      detailImgUrls: [''],
+      detailImgUrls: [],
     };
+  }
+  async componentDidMount() {
+    const { data: product } = await api.get('/products/1');
+
+    this.setState({
+      ...product,
+      loading: false,
+    });
+  }
+
+  render() {
     return (
       <div>
-        <ProductDetailView {...product} />
+        <ProductDetailView {...this.state} />
       </div>
     );
   }

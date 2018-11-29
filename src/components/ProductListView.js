@@ -28,7 +28,7 @@ class ProductListView extends Component {
   }
 }
 
-// 2.
+// I2.
 export default withLoading(ProductListView);
 
 // 상품 목록 데이터 배열을 받아서 화면을 그려주는 컴포넌트

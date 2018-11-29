@@ -21,7 +21,7 @@ export default class ProductList extends Component {
 
   render() {
     const { products, loading } = this.state;
-    // 1
+    // I1
     const productsList = products.map(p => ({
       // 소괄호, 중괄호 => 객체 바로 반환하기
       title: p.title,

@@ -84,20 +84,20 @@ addDecorator(StoryRouter());
 /root : 홈
 /product/1 : 1번 상품 정보
 
-### 1
+### I1
 
 PC 가 받는 데이터의 구조가 서버가 받는 데이터 구조에 의존성이 있으면 좋지않다.
 PC에서 어떤 데이터를 받을 것인가와 서버의 데이터 구조는 상관이 없다.
 PC의 사용법은 최대한 간단하게 유지하는 것이 좋기 때문에 서버에 의존성을 두지 않는다.
 
-### 2
+### I2
 
 공유하는 내용은 HOC로 작성하는 것이 좋다.
 ex) loading
 
 loading이라는 prop을 내려받을 수 있는 컴포넌트에 둘러준다 (PostList에 loading이라는 prop이 있고 ProductListView가 그 prop을 내려받을 수 있으므로 ProductListView에 둘러준다)
 
-### 3
+### I3
 
 ROUTE는 if같은 칭긔이지 if else 같은 칭긔가 아니다. 중복이 와다다 될 수 있음 => `switch`, `exact` 사용해서 해결 가능
 
