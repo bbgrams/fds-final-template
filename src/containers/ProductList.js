@@ -12,7 +12,12 @@ export default class ProductList extends Component {
     };
   }
   async componentDidMount() {
-    const { data: products } = await api.get('/products');
+    const { category } = this.props;
+    const { data: products } = await api.get('/products', {
+      params: {
+        category,
+      },
+    });
     this.setState({
       products,
       loading: false,
