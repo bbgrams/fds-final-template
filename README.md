@@ -175,3 +175,37 @@ onChange={e => this.handleFieldChange(e, 'username')}
 ### I14
 
 사용자가 링크를 클릭하지 않아도 주소표시줄의 주소를 바꾸고 싶을 때 : redirect 렌더링 => 부작용이 있다. 알아보자
+
+### I15
+
+실무에서 PC를 HOC로 감싸서 CC로 사용하는 패턴이 많이 사용된다.
+
+=> HeaderView를 최대한 퓨어하게 두기 위해서.
+
+### I16
+
+provider에서 내려주는 값이 바뀔 때마다 consumer가 다시 그려진다 => 로그아웃 버튼 클릭 시 헤더가 다시 렌더링된다.
+
+### I17
+
+홈에서 로그인 후 로그아웃 하면 헤더가 없어진다.
+
+HeaderView에 logoutSuccess라는 상태가 남아있기 때문에 Redirect가 여전히 그려져있다.
+
+상태가 남아있어서 화면이 제대로 그려지지않는다. => element type이나 key가 바뀌면 상태가 날아간다
+
+logoutSuccess라는 상태가 날아가지않아서 HeaderView가 제대로 그려지지않았다.
+
+### I18
+
+Header에 로그인 전과 로그인 후 각각 다른 key를 붙여주어서 key가 바뀔 때 상태가 모두 지워져서 화면이 다시 그려지는 효과를 준다.
+
+이 때 사용할 수 있는 좋은 key로는 username이 있다.
+
+로그인 상태 key : username(사용자 아이디)
+
+로그아웃 상태 key : username(null) => 로그아웃 상태에는 null이 들어가게 됨.
+
+강제로 상태를 초기화하고싶은 순간에 다른 key를 넣어주면 된다.
+
+상태가 날아가지않아서 화면이 바뀌지않는 경우가 종종 생긴다.
