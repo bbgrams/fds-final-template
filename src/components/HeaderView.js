@@ -2,20 +2,9 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
 export default class HeaderView extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      logoutSuccess: false,
-    };
-  }
-
   render() {
-    const { username, logout } = this.props;
-    const { logoutSuccess } = this.state;
-    if (logoutSuccess) {
-      return <Redirect to="/" />;
-    }
+    const { username, logout, history } = this.props;
+
     // I17
     return (
       <div>
@@ -26,9 +15,8 @@ export default class HeaderView extends Component {
             <button
               onClick={() => {
                 logout();
-                this.setState({
-                  logoutSuccess: true,
-                });
+                // I20
+                history.push('/');
               }}
             >
               로그아웃
