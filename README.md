@@ -314,3 +314,23 @@ key를 붙여서 완전히 새로운 컴포넌트(ProductList)를 다시 그릴�
 ---
 
 ### I25
+
+링크나 버튼을 클릭할때마다 주소가 바뀌는 사이트를 만들었다.
+
+주소가 바뀌는 사이트를 만들면 조심해야할 것이 있다.
+
+npm은 어떤 경로로 접속하더라도 react app을 응답하도록 만들어져있다.
+
+하지만 개발서버(다른 서버 netlify)에서는 뭔가 설정을 해주지 않으면 우리가 설정한 주소를 그대로 사용할 수가 없다.
+
+어느경로로 접속하건 index.html을 보여주어야한다.
+
+[netlify 설정](https://facebook.github.io/create-react-app/docs/deployment#netlify-https-wwwnetlifycom)
+
+To setup continuous delivery 부분을 진행
+
+`public/_redirects` 파일을 만들어서 환경을 설정해줄 수 있다.
+
+/\* /index.html 200
+
+=> 어떤 경로로 들어오더라도 `index.html`을 불러오고 응답코드로는 `200`을 사용하라

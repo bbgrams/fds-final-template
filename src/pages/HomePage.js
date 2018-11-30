@@ -21,6 +21,7 @@ export default class HomePage extends Component {
         <Link to="/?category=icecream">ICE CREAM</Link>
         <Link to="/?category=ccino">CCINO</Link>
         {/* I24 */}
+        {/* 카테고리 */}
         <ProductList key={category} category={category} />
       </Layout>
     );
